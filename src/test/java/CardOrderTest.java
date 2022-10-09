@@ -24,14 +24,11 @@ public class CardOrderTest {
 
 
     @BeforeEach
-    void setup() {
+    void setUp(){
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
+        options.setHeadless(true);
 
-        driver.get("http://localhost:9999/");
+        driver = new ChromeDriver(options);
     }
 
 
