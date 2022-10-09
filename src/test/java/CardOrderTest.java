@@ -14,8 +14,12 @@ public class CardOrderTest {
 
 
     @BeforeAll
-    static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
+    static void setUpAll(){
+        if (System.getProperty("os.name").contains("Linux")) {
+            System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
+        } else {
+            System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
+        }
     }
 
 
