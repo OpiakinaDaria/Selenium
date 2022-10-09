@@ -15,7 +15,7 @@ public class CardOrderTest {
 
     @BeforeAll
     static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
     }
 
 
@@ -29,7 +29,7 @@ public class CardOrderTest {
 
         driver.get("http://localhost:9999/");
     }
-       
+
 
     @AfterEach
     void tearsDown() {
