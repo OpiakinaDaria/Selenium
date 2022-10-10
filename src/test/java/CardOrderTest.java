@@ -1,3 +1,4 @@
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -14,12 +15,8 @@ public class CardOrderTest {
 
 
     @BeforeAll
-    static void setUpAll(){
-        if (System.getProperty("os.name").contains("Linux")) {
-            System.setProperty("webdriver.chrome.driver", "driver/linux/chromedriver");
-        } else {
-            System.setProperty("webdriver.chrome.driver", "driver/win/chromedriver.exe");
-        }
+    static void setupClass() {
+        WebDriverManager.chromedriver().setup();
     }
 
 
