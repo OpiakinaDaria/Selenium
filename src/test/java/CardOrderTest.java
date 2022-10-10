@@ -38,9 +38,11 @@ public class CardOrderTest {
     @Test
     void ShouldCardOrder() {
         driver.get("http://localhost:7777");
-        List<WebElement> inputs = driver.findElements(By.tagName("input"));
-        inputs.get(0).sendKeys("Булдакова Дарья");
-        inputs.get(1).sendKeys("+79113331122");
+        //List<WebElement> inputs = driver.findElements(By.tagName("input"));
+        //inputs.get(0).sendKeys("Булдакова Дарья");
+        //inputs.get(1).sendKeys("+79113331122");
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Петров-Иванов");
+        driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79991112233");
         driver.findElement(By.className("checkbox__box")).click();
         driver.findElement(By.className("button__text")).click();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
