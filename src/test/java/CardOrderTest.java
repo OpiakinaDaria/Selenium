@@ -2,11 +2,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-
-import java.util.List;
 
 public class CardOrderTest {
 
@@ -29,6 +26,7 @@ public class CardOrderTest {
     }
 
 
+
     @AfterEach
     void tearsDown() {
         driver.quit();
@@ -36,11 +34,8 @@ public class CardOrderTest {
     }
 
     @Test
-    void ShouldCardOrder() {
+    void shouldCardOrder() {
         driver.get("http://localhost:7777");
-        //List<WebElement> inputs = driver.findElements(By.tagName("input"));
-        //inputs.get(0).sendKeys("Булдакова Дарья");
-        //inputs.get(1).sendKeys("+79113331122");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Иван Петров-Иванов");
         driver.findElement(By.cssSelector("[data-test-id=\"phone\"] input")).sendKeys("+79991112233");
         driver.findElement(By.className("checkbox__box")).click();
